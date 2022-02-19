@@ -345,6 +345,7 @@ public class ManipularVetor {
 				
 				return new HeapSort().heapSortInstalls(vetorLimpo);
 			}
+			
 			else {
 				return  null;
 			}
