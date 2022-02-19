@@ -122,117 +122,8 @@ public class Main {
 				do {
 					System.out.println("\t --==[  Ordenar pelo nome (Campo 'App') ]==--");
 					op2 = sc.nextInt();
+					processarAlgoritmo( gerenteVetor, op,op2);
 
-					switch (op2) {
-					case 1:{
-						//ordernar appname com algoritmo SelectionSort
-						System.out.println("\n\n*****Ordenação Usando Algoritmo SelectionSort*****\n\n");
-						System.out.println("-->Atributo: 'AppName'\n\n");
-						System.out.println("-->Iniciando Médio Caso...");
-						App [] vetor_ordenado_medio_caso = gerenteVetor.ordernarVetor(1, 1);
-						System.out.println("-->Médio Caso Finalizado, salvando arquivo");
-						gerenteVetor.imprimirVetor(vetor_ordenado_medio_caso);
-						boolean salvo_medio_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_medio_caso), "selectionSort_ordena_appname_medio_caso");
-						if(salvo_medio_caso) {
-							System.out.println("Vetor Médio Caso Salvo!");
-							
-							
-							System.out.println("-->Iniciando Melhor Caso...");
-							gerenteVetor.setVetor(vetor_ordenado_medio_caso);
-							App [] vetor_ordenado_melhor_caso = gerenteVetor.ordernarVetor(1, 1);
-							System.out.println("-->Melhor Caso Finalizado, salvando arquivo");
-							gerenteVetor.imprimirVetor(vetor_ordenado_melhor_caso);
-							boolean salvo_melhor_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_melhor_caso), "selectionSort_ordena_appname_melhor_caso");
-							if(salvo_medio_caso) {
-								System.out.println("Vetor Melhor Caso Salvo!");
-								
-								
-								
-								System.out.println("-->Iniciando Pior Caso, vetor que já está ordenado será invertido...");
-								App [] vetor_pior_caso_base = gerenteVetor.inverterVetor(vetor_ordenado_melhor_caso);
-								gerenteVetor.setVetor(vetor_pior_caso_base);
-								App [] vetor_ordenado_pior_caso = gerenteVetor.ordernarVetor(1, 1);
-								System.out.println("-->Pior Caso Finalizado, salvando arquivo");
-								gerenteVetor.imprimirVetor(vetor_ordenado_pior_caso);
-								boolean salvo_pior_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_pior_caso), "selectionSort_ordena_appname_pior_caso");
-								if(salvo_pior_caso) {
-									System.out.println("Ordenações Concluídas!");
-
-								}else {
-									System.out.println("Erro ao gerar o arquivo .csv!");
-
-								}
-								
-							}else {
-								System.out.println("Erro ao gerar o arquivo .csv!");
-
-							}
-							
-							
-						}else {
-							System.out.println("Erro ao gerar o arquivo .csv!");
-
-						}
-							
-					}break;
-					case 2:{
-						//ordernar app com algoritmo insertionSort
-						System.out.println("\n\n*****Ordenação Usando Algoritmo InsertionSort*****\n\n");
-						System.out.println("-->Atributo: 'AppName'\n\n");
-						System.out.println("-->Iniciando Médio Caso...");
-						App [] vetor_ordenado_medio_caso = gerenteVetor.ordernarVetor(1, 2);
-						System.out.println("-->Médio Caso Finalizado, salvando arquivo");
-						gerenteVetor.imprimirVetor(vetor_ordenado_medio_caso);
-						boolean salvo_medio_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_medio_caso), "insertionSort_ordena_appname_medio_caso");
-						if(salvo_medio_caso) {
-							System.out.println("Vetor Médio Caso Salvo!");
-							
-							
-							System.out.println("-->Iniciando Melhor Caso...");
-							gerenteVetor.setVetor(vetor_ordenado_medio_caso);
-							App [] vetor_ordenado_melhor_caso = gerenteVetor.ordernarVetor(1, 2);
-							System.out.println("-->Melhor Caso Finalizado, salvando arquivo");
-							gerenteVetor.imprimirVetor(vetor_ordenado_melhor_caso);
-							boolean salvo_melhor_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_melhor_caso), "insertionSort_ordena_appname_melhor_caso");
-							if(salvo_medio_caso) {
-								System.out.println("Vetor Melhor Caso Salvo!");
-								
-								
-								
-								System.out.println("-->Iniciando Pior Caso, vetor que já está ordenado será invertido...");
-								App [] vetor_pior_caso_base = gerenteVetor.inverterVetor(vetor_ordenado_melhor_caso);
-								gerenteVetor.setVetor(vetor_pior_caso_base);
-								App [] vetor_ordenado_pior_caso = gerenteVetor.ordernarVetor(1, 2);
-								System.out.println("-->Pior Caso Finalizado, salvando arquivo");
-								gerenteVetor.imprimirVetor(vetor_ordenado_pior_caso);
-								boolean salvo_pior_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_pior_caso), "insertionSort_ordena_appname_pior_caso");
-								if(salvo_pior_caso) {
-									System.out.println("Ordenações Concluídas!");
-
-								}else {
-									System.out.println("Erro ao gerar o arquivo .csv!");
-
-								}
-								
-							}else {
-								System.out.println("Erro ao gerar o arquivo .csv!");
-
-							}
-							
-							
-						}else {
-							System.out.println("Erro ao gerar o arquivo .csv!");
-
-						}
-						
-					}break;
-					
-					case 0:
-						System.out.println("\n retornar...\n");
-						break;
-					default:
-						System.out.println("\n Opção inválida!\n Por gentileza, tente novamente!\n");
-					}
 
 				} while (op2 != 0);
 			}
@@ -244,115 +135,9 @@ public class Main {
 						System.out.println("\t --==[  Ordernar pelas Notas de Avaliação (Campo 'Ratins' )  ]==--");
 						op2 = sc.nextInt();
 
-						switch (op2) {
-						case 1:{
-							//ordernar ratins com algoritmo SelectionSort
-							System.out.println("\n\n*****Ordenação Usando Algoritmo SelectionSort*****\n\n");
-							System.out.println("-->Atributo: 'Rating'\n\n");
-							System.out.println("-->Iniciando Médio Caso...");
-							App [] vetor_ordenado_medio_caso = gerenteVetor.ordernarVetor(2, 1);
-							System.out.println("-->Médio Caso Finalizado, salvando arquivo");
-							gerenteVetor.imprimirVetor(vetor_ordenado_medio_caso);
-							boolean salvo_medio_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_medio_caso), "SelectionSort_ordena_rating_medio_caso");
-							if(salvo_medio_caso) {
-								System.out.println("Vetor Médio Caso Salvo!");
-								
-								
-								System.out.println("-->Iniciando Melhor Caso...");
-								gerenteVetor.setVetor(vetor_ordenado_medio_caso);
-								App [] vetor_ordenado_melhor_caso = gerenteVetor.ordernarVetor(2, 1);
-								System.out.println("-->Melhor Caso Finalizado, salvando arquivo");
-								gerenteVetor.imprimirVetor(vetor_ordenado_melhor_caso);
-								boolean salvo_melhor_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_melhor_caso), "SelectionSort_ordena_rating_melhor_caso");
-								if(salvo_medio_caso) {
-									System.out.println("Vetor Melhor Caso Salvo!");
-									
-									
-									
-									System.out.println("-->Iniciando Pior Caso, vetor que já está ordenado será invertido...");
-									App [] vetor_pior_caso_base = gerenteVetor.inverterVetor(vetor_ordenado_melhor_caso);
-									gerenteVetor.setVetor(vetor_pior_caso_base);
-									App [] vetor_ordenado_pior_caso = gerenteVetor.ordernarVetor(2, 1);
-									System.out.println("-->Pior Caso Finalizado, salvando arquivo");
-									gerenteVetor.imprimirVetor(vetor_ordenado_pior_caso);
-									boolean salvo_pior_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_pior_caso), "SelectionSort_ordena_rating_pior_caso");
-									if(salvo_pior_caso) {
-										System.out.println("Ordenações Concluídas!");
+						processarAlgoritmo( gerenteVetor, op,op2);
 
-									}else {
-										System.out.println("Erro ao gerar o arquivo .csv!");
-
-									}
-									
-								}else {
-									System.out.println("Erro ao gerar o arquivo .csv!");
-
-								}
-								
-								
-							}else {
-								System.out.println("Erro ao gerar o arquivo .csv!");
-
-							}
-							
-						}break;
-							
-						case 2:{
-							//ordernar app com algoritmo insertionSort
-							System.out.println("\n\n*****Ordenação Usando Algoritmo InsertionSort*****\n\n");
-							System.out.println("-->Atributo: 'Rating'\n\n");
-							System.out.println("-->Iniciando Médio Caso...");
-							App [] vetor_ordenado_medio_caso = gerenteVetor.ordernarVetor(2, 2);
-							System.out.println("-->Médio Caso Finalizado, salvando arquivo");
-							gerenteVetor.imprimirVetor(vetor_ordenado_medio_caso);
-							boolean salvo_medio_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_medio_caso), "insertionSort_ordena_rating_medio_caso");
-							if(salvo_medio_caso) {
-								System.out.println("Vetor Médio Caso Salvo!");
-								
-								
-								System.out.println("-->Iniciando Melhor Caso...");
-								gerenteVetor.setVetor(vetor_ordenado_medio_caso);
-								App [] vetor_ordenado_melhor_caso = gerenteVetor.ordernarVetor(2, 2);
-								System.out.println("-->Melhor Caso Finalizado, salvando arquivo");
-								gerenteVetor.imprimirVetor(vetor_ordenado_melhor_caso);
-								boolean salvo_melhor_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_melhor_caso), "insertionSort_ordena_rating_melhor_caso");
-								if(salvo_medio_caso) {
-									System.out.println("Vetor Melhor Caso Salvo!");
-									
-									
-									
-									System.out.println("-->Iniciando Pior Caso, vetor que já está ordenado será invertido...");
-									App [] vetor_pior_caso_base = gerenteVetor.inverterVetor(vetor_ordenado_melhor_caso);
-									gerenteVetor.setVetor(vetor_pior_caso_base);
-									App [] vetor_ordenado_pior_caso = gerenteVetor.ordernarVetor(2, 2);
-									System.out.println("-->Pior Caso Finalizado, salvando arquivo");
-									gerenteVetor.imprimirVetor(vetor_ordenado_pior_caso);
-									boolean salvo_pior_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_pior_caso), "insertionSort_ordena_rating_pior_caso");
-									if(salvo_pior_caso) {
-										System.out.println("Ordenações Concluídas!");
-
-									}else {
-										System.out.println("Erro ao gerar o arquivo .csv!");
-
-									}
-									
-								}else {
-									System.out.println("Erro ao gerar o arquivo .csv!");
-
-								}
-								
-								
-							}else {
-								System.out.println("Erro ao gerar o arquivo .csv!");
-
-							}
-							
-						}break;
-						
-						default:
-							System.out.println("\n Opção inválida!\n Por gentileza, tente novamente!\n");
-						}
-
+					
 					} while (op2 != 0);
 				
 			}
@@ -364,115 +149,8 @@ public class Main {
 					System.out.println("\t --==[  Ordernar pelo número de instalações (Campo 'installs')   ]==--");
 					op2 = sc.nextInt();
 
-					switch (op2) {
-					case 1:{
-						//ordernar app com algoritmo insertionSort
-						System.out.println("\n\n*****Ordenação Usando Algoritmo SelectionSort*****\n\n");
-						System.out.println("-->Atributo: 'Installs'\n\n");
-						System.out.println("-->Iniciando Médio Caso...");
-						App [] vetor_ordenado_medio_caso = gerenteVetor.ordernarVetor(3, 1);
-						System.out.println("-->Médio Caso Finalizado, salvando arquivo");
-						gerenteVetor.imprimirVetor(vetor_ordenado_medio_caso);
-						boolean salvo_medio_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_medio_caso), "SelectionSort_ordena_installs_medio_caso");
-						if(salvo_medio_caso) {
-							System.out.println("Vetor Médio Caso Salvo!");
-							
-							
-							System.out.println("-->Iniciando Melhor Caso...");
-							gerenteVetor.setVetor(vetor_ordenado_medio_caso);
-							App [] vetor_ordenado_melhor_caso = gerenteVetor.ordernarVetor(3, 1);
-							System.out.println("-->Melhor Caso Finalizado, salvando arquivo");
-							gerenteVetor.imprimirVetor(vetor_ordenado_melhor_caso);
-							boolean salvo_melhor_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_melhor_caso), "SelectionSort_ordena_installs_melhor_caso");
-							if(salvo_medio_caso) {
-								System.out.println("Vetor Melhor Caso Salvo!");
-								
-								
-								
-								System.out.println("-->Iniciando Pior Caso, vetor que já está ordenado será invertido...");
-								App [] vetor_pior_caso_base = gerenteVetor.inverterVetor(vetor_ordenado_melhor_caso);
-								gerenteVetor.setVetor(vetor_pior_caso_base);
-								App [] vetor_ordenado_pior_caso = gerenteVetor.ordernarVetor(3, 1);
-								System.out.println("-->Pior Caso Finalizado, salvando arquivo");
-								gerenteVetor.imprimirVetor(vetor_ordenado_pior_caso);
-								boolean salvo_pior_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_pior_caso), "SelectionSort_ordena_installs_pior_caso");
-								if(salvo_pior_caso) {
-									System.out.println("Ordenações Concluídas!");
+					processarAlgoritmo( gerenteVetor, op,op2);
 
-								}else {
-									System.out.println("Erro ao gerar o arquivo .csv!");
-
-								}
-								
-							}else {
-								System.out.println("Erro ao gerar o arquivo .csv!");
-
-							}
-							
-							
-						}else {
-							System.out.println("Erro ao gerar o arquivo .csv!");
-
-						}
-						
-					}break;
-					case 2:{
-						//ordernar app com algoritmo insertionSort
-						System.out.println("\n\n*****Ordenação Usando Algoritmo InsertionSort*****\n\n");
-						System.out.println("-->Atributo: 'Installs'\n\n");
-						System.out.println("-->Iniciando Médio Caso...");
-						App [] vetor_ordenado_medio_caso = gerenteVetor.ordernarVetor(3, 2);
-						System.out.println("-->Médio Caso Finalizado, salvando arquivo");
-						gerenteVetor.imprimirVetor(vetor_ordenado_medio_caso);
-						boolean salvo_medio_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_medio_caso), "insertionSort_ordena_installs_medio_caso");
-						if(salvo_medio_caso) {
-							System.out.println("Vetor Médio Caso Salvo!");
-							
-							
-							System.out.println("-->Iniciando Melhor Caso...");
-							gerenteVetor.setVetor(vetor_ordenado_medio_caso);
-							App [] vetor_ordenado_melhor_caso = gerenteVetor.ordernarVetor(3, 2);
-							System.out.println("-->Melhor Caso Finalizado, salvando arquivo");
-							gerenteVetor.imprimirVetor(vetor_ordenado_melhor_caso);
-							boolean salvo_melhor_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_melhor_caso), "insertionSort_ordena_installs_melhor_caso");
-							if(salvo_medio_caso) {
-								System.out.println("Vetor Melhor Caso Salvo!");
-								
-								
-								
-								System.out.println("-->Iniciando Pior Caso, vetor que já está ordenado será invertido...");
-								App [] vetor_pior_caso_base = gerenteVetor.inverterVetor(vetor_ordenado_melhor_caso);
-								gerenteVetor.setVetor(vetor_pior_caso_base);
-								App [] vetor_ordenado_pior_caso = gerenteVetor.ordernarVetor(3, 2);
-								System.out.println("-->Pior Caso Finalizado, salvando arquivo");
-								gerenteVetor.imprimirVetor(vetor_ordenado_pior_caso);
-								boolean salvo_pior_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_pior_caso), "insertionSort_ordena_installs_pior_caso");
-								if(salvo_pior_caso) {
-									System.out.println("Ordenações Concluídas!");
-
-								}else {
-									System.out.println("Erro ao gerar o arquivo .csv!");
-
-								}
-								
-							}else {
-								System.out.println("Erro ao gerar o arquivo .csv!");
-
-							}
-							
-							
-						}else {
-							System.out.println("Erro ao gerar o arquivo .csv!");
-
-						}
-						
-					}break;
-					case 0:
-						System.out.println("\n retornar...\n");
-						break;
-					default:
-						System.out.println("\n Opção inválida!\n Por gentileza, tente novamente!\n");
-					}
 
 				} while (op2 != 0);
 
@@ -485,114 +163,7 @@ public class Main {
 					System.out.println("\t --==[  Ordernar pela data da última atualização (Campo last_update)  ]==--");
 					op2 = sc.nextInt();
 
-					switch (op2) {
-					case 1:{
-						//ordernar app com algoritmo insertionSort
-						System.out.println("\n\n*****Ordenação Usando Algoritmo SelectionSort*****\n\n");
-						System.out.println("-->Atributo: 'Last_update'\n\n");
-						System.out.println("-->Iniciando Médio Caso...");
-						App [] vetor_ordenado_medio_caso = gerenteVetor.ordernarVetor(4, 1);
-						System.out.println("-->Médio Caso Finalizado, salvando arquivo");
-						gerenteVetor.imprimirVetor(vetor_ordenado_medio_caso);
-						boolean salvo_medio_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_medio_caso), "SelectionSort_ordena_installs_medio_caso");
-						if(salvo_medio_caso) {
-							System.out.println("Vetor Médio Caso Salvo!");
-							
-							
-							System.out.println("-->Iniciando Melhor Caso...");
-							gerenteVetor.setVetor(vetor_ordenado_medio_caso);
-							App [] vetor_ordenado_melhor_caso = gerenteVetor.ordernarVetor(4, 1);
-							System.out.println("-->Melhor Caso Finalizado, salvando arquivo");
-							gerenteVetor.imprimirVetor(vetor_ordenado_melhor_caso);
-							boolean salvo_melhor_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_melhor_caso), "SelectionSort_ordena_installs_melhor_caso");
-							if(salvo_medio_caso) {
-								System.out.println("Vetor Melhor Caso Salvo!");
-								
-								
-								
-								System.out.println("-->Iniciando Pior Caso, vetor que já está ordenado será invertido...");
-								App [] vetor_pior_caso_base = gerenteVetor.inverterVetor(vetor_ordenado_melhor_caso);
-								gerenteVetor.setVetor(vetor_pior_caso_base);
-								App [] vetor_ordenado_pior_caso = gerenteVetor.ordernarVetor(4, 1);
-								System.out.println("-->Pior Caso Finalizado, salvando arquivo");
-								gerenteVetor.imprimirVetor(vetor_ordenado_pior_caso);
-								boolean salvo_pior_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_pior_caso), "SelectionSort_ordena_installs_pior_caso");
-								if(salvo_pior_caso) {
-									System.out.println("Ordenações Concluídas!");
-
-								}else {
-									System.out.println("Erro ao gerar o arquivo .csv!");
-
-								}
-								
-							}else {
-								System.out.println("Erro ao gerar o arquivo .csv!");
-
-							}
-							
-							
-						}else {
-							System.out.println("Erro ao gerar o arquivo .csv!");
-
-						}
-					}break;
-					case 2:{
-						//ordernar app com algoritmo insertionSort
-						System.out.println("\n\n*****Ordenação Usando Algoritmo InsertionSort*****\n\n");
-						System.out.println("-->Atributo: 'Last_update'\n\n");
-						System.out.println("-->Iniciando Médio Caso...");
-						App [] vetor_ordenado_medio_caso = gerenteVetor.ordernarVetor(4, 2);
-						System.out.println("-->Médio Caso Finalizado, salvando arquivo");
-						gerenteVetor.imprimirVetor(vetor_ordenado_medio_caso);
-						boolean salvo_medio_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_medio_caso), "insertionSort_ordena_installs_medio_caso");
-						if(salvo_medio_caso) {
-							System.out.println("Vetor Médio Caso Salvo!");
-							
-							
-							System.out.println("-->Iniciando Melhor Caso...");
-							gerenteVetor.setVetor(vetor_ordenado_medio_caso);
-							App [] vetor_ordenado_melhor_caso = gerenteVetor.ordernarVetor(4, 2);
-							System.out.println("-->Melhor Caso Finalizado, salvando arquivo");
-							gerenteVetor.imprimirVetor(vetor_ordenado_melhor_caso);
-							boolean salvo_melhor_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_melhor_caso), "insertionSort_ordena_installs_melhor_caso");
-							if(salvo_medio_caso) {
-								System.out.println("Vetor Melhor Caso Salvo!");
-								
-								
-								
-								System.out.println("-->Iniciando Pior Caso, vetor que já está ordenado será invertido...");
-								App [] vetor_pior_caso_base = gerenteVetor.inverterVetor(vetor_ordenado_melhor_caso);
-								gerenteVetor.setVetor(vetor_pior_caso_base);
-								App [] vetor_ordenado_pior_caso = gerenteVetor.ordernarVetor(4, 2);
-								System.out.println("-->Pior Caso Finalizado, salvando arquivo");
-								gerenteVetor.imprimirVetor(vetor_ordenado_pior_caso);
-								boolean salvo_pior_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_pior_caso), "insertionSort_ordena_installs_pior_caso");
-								if(salvo_pior_caso) {
-									System.out.println("Ordenações Concluídas!");
-
-								}else {
-									System.out.println("Erro ao gerar o arquivo .csv!");
-
-								}
-								
-							}else {
-								System.out.println("Erro ao gerar o arquivo .csv!");
-
-							}
-							
-							
-						}else {
-							System.out.println("Erro ao gerar o arquivo .csv!");
-
-						}
-						
-					}break;
-					case 0:
-						System.out.println("\n retornar...\n");
-						break;
-					default:
-						System.out.println("\n Opção inválida!\n Por gentileza, tente novamente!\n");
-					}
+					processarAlgoritmo( gerenteVetor, op,op2);
 
 				} while (op2 != 0);
 			}
@@ -624,6 +195,88 @@ public class Main {
 
 	}
 	
+	public static void processarAlgoritmo(ManipularVetor gerenteVetor, int atributo, int algoritmo) throws ParseException {
+		
+		
+		String nome_algoritmo = "";
+		if(algoritmo == 1) {
+			nome_algoritmo = "SelectionSort";
+		}else if(algoritmo == 2) {
+			nome_algoritmo = "InsertionSort";
+		}else if(algoritmo == 3) {
+			nome_algoritmo = "MergeSort";
+		}else if(algoritmo == 4) {
+			nome_algoritmo = "QuickSort";
+
+		}else if(algoritmo == 4) {
+			nome_algoritmo = "QuickSort-MediandaDe3";
+
+		}
+		
+		String nome_atributo = "";
+		if(atributo == 1) {
+			nome_atributo = "AppName";
+		}else if(atributo == 2) {
+			nome_atributo = "Rating";
+		}else if(atributo == 3) {
+			nome_atributo = "Installs";
+		}else {
+			nome_atributo = "Last_Update";
+
+		}
+		
+		
+		
+		//ordernar app com algoritmo MergeSort
+		System.out.println("\n\n*****Ordenação Usando Algoritmo " + nome_algoritmo +"*****\n\n");
+		System.out.println("-->Atributo: " + nome_atributo +"\n\n");
+		System.out.println("-->Iniciando Médio Caso...");
+		
+		App [] vetor_ordenado_medio_caso = gerenteVetor.ordernarVetor(atributo, algoritmo);
+		System.out.println("-->Médio Caso Finalizado, salvando arquivo");
+		//gerenteVetor.imprimirVetor(vetor_ordenado_medio_caso);
+		boolean salvo_medio_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_medio_caso), nome_algoritmo + "_ordena_" + nome_atributo  + "_medio_caso");
+		if(salvo_medio_caso) {
+			System.out.println("Vetor Médio Caso Salvo!");
+			
+			
+			System.out.println("-->Iniciando Melhor Caso...");
+			gerenteVetor.setVetor(vetor_ordenado_medio_caso);
+			App [] vetor_ordenado_melhor_caso = gerenteVetor.ordernarVetor(atributo, algoritmo);
+			System.out.println("-->Melhor Caso Finalizado, salvando arquivo");
+			//gerenteVetor.imprimirVetor(vetor_ordenado_melhor_caso);
+			boolean salvo_melhor_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_melhor_caso), nome_algoritmo + "_ordena_" + nome_atributo  + "_melhor_caso");
+			if(salvo_medio_caso) {
+				System.out.println("Vetor Melhor Caso Salvo!");
+				
+				
+				
+				System.out.println("-->Iniciando Pior Caso, vetor que já está ordenado será invertido...");
+				App [] vetor_pior_caso_base = gerenteVetor.inverterVetor(vetor_ordenado_melhor_caso);
+				gerenteVetor.setVetor(vetor_pior_caso_base);
+				App [] vetor_ordenado_pior_caso = gerenteVetor.ordernarVetor(atributo, algoritmo);
+				System.out.println("-->Pior Caso Finalizado, salvando arquivo");
+				//gerenteVetor.imprimirVetor(vetor_ordenado_pior_caso);
+				boolean salvo_pior_caso = gerenteVetor.salvarCsv(gerenteVetor.gerarCsv(vetor_ordenado_pior_caso), nome_algoritmo + "_ordena_" + nome_atributo + "_pior_caso");
+				if(salvo_pior_caso) {
+					System.out.println("Ordenações Concluídas!");
+
+				}else {
+					System.out.println("Erro ao gerar o arquivo .csv!");
+
+				}
+				
+			}else {
+				System.out.println("Erro ao gerar o arquivo .csv!");
+
+			}
+			
+			
+		}else {
+			System.out.println("Erro ao gerar o arquivo .csv!");
+
+		}
+	}
 	
 	public static void imprimeSubMenu() {
 		System.out.println("\n Escolha uma das seguintes opções disponíveis");

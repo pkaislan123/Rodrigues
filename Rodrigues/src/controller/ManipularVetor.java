@@ -60,7 +60,69 @@ public class ManipularVetor {
 			else if(algoritmo == 2) {
 				//insertion sort
 				return ordenadorInsertionSort.insertionSortAppName(this.vetor);
-			}else {
+			}
+			else if(algoritmo == 3) {
+				//merge sort
+				  int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new MergeSort().mergeSortAppName(0,vetorLimpo.length,vetorLimpo);
+			}else if(algoritmo == 4) {
+				//quick sort
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new QuickSort().quickSortAppName(vetorLimpo,0,vetorLimpo.length-1);
+			}else if(algoritmo == 5) {
+				//quick sort com medianda de 3
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new QuickSortMedianaDeTres().quicksortMedianaDeTresAppName(vetorLimpo,0,vetorLimpo.length-1);
+			}
+			else {
 				return null;
 			}
 		}else if(atributo == 2) {
@@ -72,7 +134,70 @@ public class ManipularVetor {
 			else if(algoritmo == 2) {
 				//insertion sort
 				return ordenadorInsertionSort.insertionSortRating(this.vetor);
-			}else {
+			}
+			else if(algoritmo == 3) {
+				//merge sort
+				  int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new MergeSort().mergeSortRating(0,vetorLimpo.length,vetorLimpo);
+			}else if(algoritmo == 4) {
+				//quick sort
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new QuickSort().quickSortRating(vetorLimpo,0,vetorLimpo.length-1);
+			}
+			else if(algoritmo == 5) {
+				//quick sort com medianda de 3
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new QuickSortMedianaDeTres().quicksortMedianaDeTresRating(vetorLimpo,0,vetorLimpo.length-1);
+			}
+			else {
 				return null;
 			}
 		}else if(atributo == 3) {
@@ -83,7 +208,70 @@ public class ManipularVetor {
 			else if(algoritmo == 2) {
 				//insertion sort
 				return ordenadorInsertionSort.insertionSortInstalls(this.vetor);
-			}else {
+			}
+			else if(algoritmo == 3) {
+				//merge sort
+				  int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new MergeSort().mergeSortInstalls(0,vetorLimpo.length,vetorLimpo);
+			}
+			else if(algoritmo == 4) {
+				//quick sort
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new QuickSort().quickSortInstalls(vetorLimpo,0,vetorLimpo.length-1);
+			}else if(algoritmo == 5) {
+				//quick sort com mediana de 3
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new QuickSortMedianaDeTres().quicksortMedianaDeTresInstalls(vetorLimpo,0,vetorLimpo.length-1);
+			}
+			else {
 				return  null;
 			}
 		}
@@ -95,7 +283,70 @@ public class ManipularVetor {
 			else if(algoritmo == 2) {
 				//insertion sort
 				return ordenadorInsertionSort.insertionSortLastUpdate(this.vetor);
-			}else {
+			}
+			else if(algoritmo == 3) {
+				//merge sort
+				  int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new MergeSort().mergeSortLastUpdate(0,vetorLimpo.length,vetorLimpo);
+			}
+			else if(algoritmo == 4) {
+				//quick sort
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new QuickSort().quickSortLastUpdate(vetorLimpo,0,vetorLimpo.length-1);
+			}else if(algoritmo == 5) {
+				//quick sort com mediana de 3
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new QuickSortMedianaDeTres().quicksortMedianaDeTresLastUpdate(vetorLimpo,0,vetorLimpo.length-1);
+			}
+			else {
 				return  null;
 			}
 		}
@@ -110,6 +361,9 @@ public App[] inverterVetor(App[] vetor) {
 	        if(vetor[i] == null) {
 	        	firtPosicaoNula = i;
 	        	break;
+	        }else {
+	        	firtPosicaoNula = vetor.length;
+
 	        }
 	    }
 	    
