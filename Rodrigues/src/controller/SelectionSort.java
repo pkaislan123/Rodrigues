@@ -79,7 +79,7 @@ public class SelectionSort {
 	            int min_idx = i;
 	            for (int j = i+1; j < tamanho; j++)
 	            	if(arr[j] != null) {
-	                if ( dateFormat.parse(arr[j].getLast_update()).after( dateFormat.parse(arr[min_idx].getLast_update()) ) )
+	                if ( dateFormat.parse(arr[j].getLast_update()).before( dateFormat.parse(arr[min_idx].getLast_update()) ) )
 	                    min_idx = j;
 	            	}else {
 	            		break;

@@ -47,6 +47,18 @@ public class ManipularVetor {
 		}
 	}
 	
+	public void imprimirVetorData(App [] vetor) {
+		for (int i = 0; i < vetor.length; i++) {
+			if (vetor[i] == null) {
+				break;
+			} else {
+
+				System.out.println(vetor[i].getName() + " - " + vetor[i].getLast_update());
+			}
+		}
+	}
+	
+	
 	
 	
 	public App[] ordernarVetor(int atributo, int algoritmo) throws ParseException {
@@ -55,7 +67,9 @@ public class ManipularVetor {
 			//atributo app name
 			if(algoritmo == 1) {
 				//selection sort
+				
 				return ordenadorSelectionSort.SelectionSortAppName(this.vetor);
+			    
 			}
 			else if(algoritmo == 2) {
 				//insertion sort
@@ -121,6 +135,26 @@ public class ManipularVetor {
 
 				
 				return new QuickSortMedianaDeTres().quicksortMedianaDeTresAppName(vetorLimpo,0,vetorLimpo.length-1);
+			}else if(algoritmo == 6) {
+				//heapSort
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new HeapSort().heapSortAppName(vetorLimpo);
 			}
 			else {
 				return null;
@@ -196,6 +230,26 @@ public class ManipularVetor {
 
 				
 				return new QuickSortMedianaDeTres().quicksortMedianaDeTresRating(vetorLimpo,0,vetorLimpo.length-1);
+			}else if(algoritmo == 6) {
+				//heapSort
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new HeapSort().heapSortRating(vetorLimpo);
 			}
 			else {
 				return null;
@@ -270,6 +324,26 @@ public class ManipularVetor {
 
 				
 				return new QuickSortMedianaDeTres().quicksortMedianaDeTresInstalls(vetorLimpo,0,vetorLimpo.length-1);
+			}else if(algoritmo == 6) {
+				//heapSort
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new HeapSort().heapSortInstalls(vetorLimpo);
 			}
 			else {
 				return  null;
@@ -345,6 +419,26 @@ public class ManipularVetor {
 
 				
 				return new QuickSortMedianaDeTres().quicksortMedianaDeTresLastUpdate(vetorLimpo,0,vetorLimpo.length-1);
+			}else if(algoritmo == 6) {
+				//heapSort
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+
+				
+				return new HeapSort().heapSortLastUpdate(vetorLimpo);
 			}
 			else {
 				return  null;
@@ -429,6 +523,20 @@ public App[] inverterVetor(App[] vetor) {
 		
 	}
 
+	
+public boolean salvarCsvSemAbrir(String texto, String nome_arquivo) {
+		
+		File file = manipularTxt.criarArquivoRetorno(caminho_padrao, nome_arquivo, "csv");
+		
+		if(file != null) {
+			boolean texto_salvo = manipularTxt.escreverArquivo(file, texto);
+
+			return true;
+		}else {
+			return false;
+		}
+		
+	}
 	
 	
 	

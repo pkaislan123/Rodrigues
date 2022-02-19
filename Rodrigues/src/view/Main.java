@@ -61,12 +61,16 @@ public class Main {
 						app.setLast_update(nova_data);
 
 					} catch (Exception e) {
-						e.printStackTrace();
+						try {
 						DateFormat format = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
 						Date date = format.parse(data);
 						String nova_data = formato_transformado.format(date);
 
 						app.setLast_update(nova_data);
+						}catch(Exception f) {
+							app.setLast_update(data);
+
+						}
 
 					}
 
@@ -78,7 +82,6 @@ public class Main {
 					// System.out.println(app.toString());
 					contador++;
 				} catch (Exception e) {
-					e.printStackTrace();
 				}
 			}
 
@@ -92,17 +95,21 @@ public class Main {
 		int op = 0, op2;
 		
 		
-		
-		App[] base_dados = iniciarOperacoes("E:\\Users\\aisla\\Downloads\\googleplaystore.csv");
+		System.out.println("\t| Transformando Data, aguarde...|");
+
+		App[] base_dados_inicial = iniciarOperacoes("E:\\Users\\aisla\\Downloads\\googleplaystore.csv");
 
 	
-		ManipularVetor gerenteVetor = new ManipularVetor(base_dados);
+		ManipularVetor gerenteVetor = new ManipularVetor(base_dados_inicial);
+		System.out.println("-->Transformação de data finalizado, salvando arquivo");
+		gerenteVetor.imprimirVetorData(base_dados_inicial);
+		boolean salvo_transformacao = gerenteVetor.salvarCsvSemAbrir(gerenteVetor.gerarCsv(base_dados_inicial), "googleplaystore_data_transformada");
 		
-		System.out.println("\t| Vetor Incial: |");
-		gerenteVetor.imprimirVetor(base_dados);
-		System.out.println("\n\n");
-
+		if(salvo_transformacao) {
+			
 		
+			App[] base_dados_transformada = iniciarOperacoes("E:\\Users\\aisla\\Downloads\\googleplaystore_data_transformada.csv");
+			gerenteVetor.setVetor(base_dados_transformada);
 		
 		do {
 			System.out.println("\n\t --==[ Rodrigues - Ordenação ]==--");
@@ -176,7 +183,10 @@ public class Main {
 			}
 
 		} while (op != 0);
+	}else {
+		System.out.println("\n Não foi possivel transformar a data!");
 
+	}
 		
 	}
 	
@@ -207,10 +217,10 @@ public class Main {
 			nome_algoritmo = "MergeSort";
 		}else if(algoritmo == 4) {
 			nome_algoritmo = "QuickSort";
-
-		}else if(algoritmo == 4) {
+		}else if(algoritmo == 5) {
 			nome_algoritmo = "QuickSort-MediandaDe3";
-
+		}else if(algoritmo == 6) {
+			nome_algoritmo = "HeapSort";
 		}
 		
 		String nome_atributo = "";
@@ -276,6 +286,7 @@ public class Main {
 			System.out.println("Erro ao gerar o arquivo .csv!");
 
 		}
+		
 	}
 	
 	public static void imprimeSubMenu() {
