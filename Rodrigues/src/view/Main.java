@@ -169,14 +169,8 @@ public class Main {
 						System.out.println("\t --==[  Ordernar pelo número de instalações (Campo 'installs')   ]==--");
 						op2 = sc.nextInt();
 
-						if (op2 == 7) {
-							System.out.println(
-									"\tErro! Não é possivel ordernar o Vetor pelo Campo 'Installs' usando o algoritmo 'Couting Sort'");
-							break;
-						} else {
-							processarAlgoritmo(gerenteVetor, op, op2);
-							break;
-						}
+						
+						processarAlgoritmo(gerenteVetor, op, op2);
 
 					} while (op2 != 0);
 

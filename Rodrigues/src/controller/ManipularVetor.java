@@ -344,6 +344,46 @@ public class ManipularVetor {
 
 				
 				return new HeapSort().heapSortInstalls(vetorLimpo);
+			}else if(algoritmo == 7) {
+				//CoutingSort
+				 int firtPosicaoNula = 0;
+				    for (int i = 0; i < vetor.length; i++) {
+				        if(vetor[i] == null) {
+
+				        	firtPosicaoNula = i;
+				        	break;
+				        }else {
+				        	firtPosicaoNula = vetor.length;
+				        }
+				    }
+				    
+				    App[] vetorLimpo = new App[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorLimpo[i] = this.vetor[i];
+				    }
+				    
+				    int [] vetorInstalacoes = new int[firtPosicaoNula];
+				    for(int i = 0; i  < firtPosicaoNula; i++) {
+				    	vetorInstalacoes[i] = Integer.parseInt(vetorLimpo[i].getInstalls().replace("+", "").replace(",", "").replace("\"", ""));
+				    }
+
+				int [] ordenado =  new CoutingSort().countingSort(vetorInstalacoes);
+				
+				App[] vetorOrdenado = new App[firtPosicaoNula];
+				for(int i = 0; i < ordenado.length; i++) {
+					for(int j = 0; j < vetorLimpo.length; j++) {
+						
+						if(vetorLimpo[j] != null) {
+						if(ordenado[i] == Integer.parseInt(vetorLimpo[j].getInstalls().replace("+", "").replace(",", "").replace("\"", ""))) {
+							vetorOrdenado[i] = vetorLimpo[j];
+							vetorLimpo[j] = null;
+						    break;
+						}
+						}
+					}
+				}
+				
+				return vetorOrdenado;
 			}
 			
 			else {
